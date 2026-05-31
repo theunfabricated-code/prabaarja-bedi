@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prabaarja Bedi — Entrepreneur · Marketing Advisor · Startup Coach</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* ── Core ── */
+  --charcoal:   #1A1612;
+  --cream:      #F5F0E8;
+  --terra:      #C05A3A;
+  --forest:     #2D5B4E;
+
+  /* ── Supporting ── */
+  --sand:       #C4A882;
+  --blush:      #F3E2D8;
+  --sage-lt:    #E8EFEC;
+  --grey-60:    #6B6560;
+  --stone:      #978970;
+  --mist:       #E8E3DA;
+
+  /* ── Type ── */
+  --serif: 'Cormorant', Georgia, serif;
+  --sans:  'Outfit', system-ui, sans-serif;
+  --mono:  'IBM Plex Mono', monospace;
+
+  --pad: 72px;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--cream);
+  color: var(--charcoal);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  cursor: none;
+  overflow-x: hidden;
+}
+
+/* ── CURSOR ─────────────────────────── */
+.cursor      { width:10px;height:10px;background:var(--terra);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transition:transform 0.1s; }
+.cursor-ring { width:34px;height:34px;border:1.5px solid var(--terra);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;opacity:0.3;transition:transform 0.3s cubic-bezier(0.23,1,0.32,1); }
+.cursor.big  { transform:scale(2.4);background:var(--charcoal); }
+.cursor-ring.big { opacity:0.1; }
+
+/* ── NAV ─────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: var(--charcoal);
+  border-bottom: 2px solid var(--terra);
+  padding: 0 var(--pad);
+  display: flex; align-items: center; justify-content: space-between;
+  height: 62px;
+}
+.nav-logo {
+  font-family: var(--serif); font-size: 1.15rem; font-weight: 600;
+  letter-spacing: 0.01em; color: var(--cream); text-decoration: none;
+}
+.nav-logo em { font-style: italic; font-weight: 300; color: var(--sand); }
+.nav-links { display: flex; gap: 36px; align-items: center; }
+.nav-links a {
+  font-family: var(--mono); font-size: 0.65rem;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--stone); text-decoration: none; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--cream); }
+.nav-cta {
+  font-family: var(--mono); font-size: 0.65rem;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  background: var(--terra); color: var(--cream);
+  padding: 10px 22px; border-radius: 2px; text-decoration: none;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.nav-cta:hover { opacity: 0.88; transform: translateY(-1px); }
+
+/* ── SHARED ──────────────────────────── */
+.sec-wrap { max-width: 1120px; margin: 0 auto; padding: 96px var(--pad); }
+.sec-eyebrow {
+  font-family: var(--mono); font-size: 0.65rem;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--terra); margin-bottom: 10px; display: block;
+}
+.sec-rule {
+  width: 36px; height: 2px; background: var(--terra);
+  margin-bottom: 22px; display: block;
+}
+.sec-title {
+  font-family: var(--serif); font-weight: 700;
+  font-size: clamp(2.4rem, 4.5vw, 3.4rem);
+  line-height: 1.06; letter-spacing: -0.5px;
+  color: var(--charcoal); margin-bottom: 18px;
+}
+.sec-title em { font-style: italic; font-weight: 300; color: var(--terra); }
+.sec-title.forest-em em { color: var(--forest); }
+.sec-sub {
+  font-size: 1.05rem; font-weight: 300;
+  color: var(--grey-60); line-height: 1.8;
+  max-width: 580px; margin-bottom: 56px;
+}
+hr.divider { border: none; border-top: 1px solid var(--mist); margin: 0 var(--pad); }
+
+/* Buttons */
+.btn-terra {
+  font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em;
+  text-transform: uppercase; padding: 14px 28px;
+  background: var(--terra); color: var(--cream);
+  border-radius: 2px; text-decoration: none; display: inline-block;
+  transition: opacity 0.2s, transform 0.2s; border: none; cursor: none;
+}
+.btn-terra:hover { opacity: 0.88; transform: translateY(-2px); }
+.btn-charcoal {
+  font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em;
+  text-transform: uppercase; padding: 14px 28px;
+  background: var(--charcoal); color: var(--cream);
+  border-radius: 2px; text-decoration: none; display: inline-block;
+  transition: opacity 0.2s, transform 0.2s; border: none; cursor: none;
+}
+.btn-charcoal:hover { opacity: 0.82; transform: translateY(-2px); }
+.btn-outline {
+  font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em;
+  text-transform: uppercase; padding: 14px 28px;
+  background: transparent; color: var(--charcoal);
+  border: 1px solid var(--mist); border-radius: 2px;
+  text-decoration: none; display: inline-block;
+  transition: border-color 0.2s, color 0.2s; cursor: none;
+}
+.btn-outline:hover { border-color: var(--charcoal); }
+.btn-outline-cream {
+  font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em;
+  text-transform: uppercase; padding: 14px 28px;
+  background: transparent; color: var(--cream);
+  border: 1px solid rgba(245,240,232,0.3); border-radius: 2px;
+  text-decoration: none; display: inline-block;
+  transition: border-color 0.2s; cursor: none;
+}
+.btn-outline-cream:hover { border-color: var(--cream); }
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0; transform: translateY(18px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── HERO ─────────────────────────────── */
+#home {
+  min-height: 100vh; padding: 130px var(--pad) 88px;
+  background: var(--cream); position: relative; overflow: hidden;
+}
+/* right vertical strap */
+#home::after {
+  content: '';
+  position: absolute; top: 0; right: 120px;
+  width: 8px; height: 100%;
+  background: var(--charcoal); opacity: 1;
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: 1120px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 380px;
+  gap: 72px; align-items: center;
+}
+.hero-eyebrow {
+  font-family: var(--mono); font-size: 0.68rem;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--terra); margin-bottom: 22px;
+  opacity: 0; animation: up 0.5s 0.1s forwards;
+}
+.hero h1 {
+  font-family: var(--serif); font-weight: 700;
+  font-size: clamp(4rem, 7.5vw, 7.8rem);
+  line-height: 0.93; letter-spacing: -2px;
+  color: var(--charcoal);
+  opacity: 0; animation: up 0.6s 0.25s forwards;
+}
+.hero h1 em { font-style: italic; font-weight: 300; color: var(--terra); }
+.hero-sub {
+  margin-top: 28px; font-size: 1.1rem; font-weight: 300;
+  line-height: 1.8; color: var(--grey-60); max-width: 520px;
+  opacity: 0; animation: up 0.5s 0.45s forwards;
+}
+.hero-ctas {
+  margin-top: 36px; display: flex; gap: 14px; flex-wrap: wrap;
+  opacity: 0; animation: up 0.5s 0.6s forwards;
+}
+.free-call-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--mono); font-size: 0.72rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--grey-60); margin-top: 14px;
+}
+.badge-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--forest); flex-shrink: 0;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+
+/* Hero right card */
+.hero-card {
+  background: var(--charcoal); border-radius: 4px;
+  padding: 36px 32px; position: relative; overflow: hidden;
+  opacity: 0; animation: up 0.6s 0.5s forwards;
+}
+.hero-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 3px; background: var(--terra);
+}
+.hc-avatar {
+  width: 68px; height: 68px; border-radius: 50%;
+  background: var(--terra); display: flex; align-items: center;
+  justify-content: center; margin-bottom: 20px;
+  border: 2px solid var(--forest);
+}
+.hc-avatar span {
+  font-family: var(--serif); font-weight: 700;
+  font-size: 1.6rem; color: var(--cream);
+}
+.hc-name {
+  font-family: var(--serif); font-weight: 600;
+  font-size: 1.25rem; color: var(--cream); margin-bottom: 4px;
+}
+.hc-title {
+  font-family: var(--mono); font-size: 0.6rem;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--stone); margin-bottom: 22px;
+}
+.hc-divider { height: 1px; background: rgba(245,240,232,0.08); margin-bottom: 18px; }
+.hc-item {
+  display: flex; gap: 10px; align-items: flex-start;
+  margin-bottom: 11px; font-size: 0.88rem;
+  font-weight: 300; color: var(--sand); line-height: 1.5;
+}
+.hc-item:last-child { margin-bottom: 0; }
+.hc-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--terra); flex-shrink: 0; margin-top: 8px;
+}
+.hc-tags { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 6px; }
+.hc-tag {
+  font-family: var(--mono); font-size: 0.56rem;
+  letter-spacing: 0.09em; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 2px;
+  background: rgba(192,90,58,0.15); color: var(--terra);
+}
+.hc-tag.forest { background: rgba(45,91,78,0.25); color: #6aab95; }
+
+@keyframes up {
+  from { opacity:0; transform:translateY(14px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+/* ── IMPACT NUMBERS ──────────────────── */
+#impact { background: var(--charcoal); }
+.impact-wrap {
+  max-width: 1120px; margin: 0 auto;
+  padding: 72px var(--pad);
+}
+.impact-grid {
+  display: grid; grid-template-columns: repeat(6, 1fr);
+  gap: 1px; background: rgba(245,240,232,0.06);
+}
+.impact-cell {
+  background: var(--charcoal); padding: 36px 24px;
+  text-align: center; border: 1px solid rgba(245,240,232,0.06);
+  transition: background 0.2s;
+}
+.impact-cell:hover { background: rgba(192,90,58,0.07); }
+.impact-num {
+  font-family: var(--serif); font-weight: 700;
+  font-size: 2.8rem; color: var(--cream);
+  line-height: 1; letter-spacing: -1px; display: block;
+}
+.impact-num em { font-style: italic; font-weight: 300; color: var(--terra); }
+.impact-lbl {
+  font-family: var(--mono); font-size: 0.58rem;
+  letter-spacing: 0.13em; text-transform: uppercase;
+  color: var(--stone); display: block; margin-top: 8px;
+  line-height: 1.5;
+}
+
+/* ── ABOUT ───────────────────────────── */
+#about { background: var(--cream); }
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 88px; align-items: start;
+}
+.about-body {
+  font-size: 1.05rem; font-weight: 300;
+  color: var(--grey-60); line-height: 1.85; margin-bottom: 20px;
+}
+.about-pull {
+  margin-top: 32px; padding: 24px 28px;
+  border-left: 3px solid var(--forest);
+  background: var(--sage-lt); border-radius: 0 4px 4px 0;
+}
+.about-pull p {
+  font-family: var(--serif); font-style: italic;
+  font-size: 1.1rem; font-weight: 400;
+  color: var(--charcoal); line-height: 1.7;
+}
+.fun-fact {
+  margin-top: 24px; padding: 20px 24px;
+  background: var(--blush); border-radius: 4px;
+  border-left: 3px solid var(--terra);
+  display: flex; gap: 14px; align-items: flex-start;
+}
+.fun-fact-icon {
+  font-size: 1.4rem; flex-shrink: 0; margin-top: 2px;
+}
+.fun-fact p {
+  font-size: 0.95rem; font-weight: 400; color: var(--charcoal);
+  line-height: 1.6;
+}
+.fun-fact p strong {
+  font-family: var(--mono); font-size: 0.6rem;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--terra); display: block; margin-bottom: 5px;
+}
+.about-cards { display: flex; flex-direction: column; gap: 2px; }
+.about-card {
+  background: var(--mist); padding: 26px 28px;
+  border-left: 3px solid transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+.about-card:hover { border-color: var(--terra); background: var(--blush); }
+.about-card h3 {
+  font-family: var(--serif); font-weight: 600; font-size: 1.1rem;
+  color: var(--charcoal); margin-bottom: 8px;
+}
+.about-card p {
+  font-size: 0.92rem; font-weight: 300;
+  color: var(--grey-60); line-height: 1.7;
+}
+
+/* ── SERVICES ────────────────────────── */
+#services { background: var(--charcoal); }
+#services .sec-title { color: var(--cream); }
+#services .sec-title em { color: var(--terra); }
+#services .sec-sub { color: var(--stone); max-width: 600px; }
+#services .sec-eyebrow { color: var(--terra); }
+#services .sec-rule { background: var(--terra); }
+.services-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+.service-card {
+  background: rgba(245,240,232,0.03);
+  border: 1px solid rgba(245,240,232,0.07);
+  padding: 36px 30px; display: flex; flex-direction: column;
+  transition: background 0.25s, border-color 0.25s;
+}
+.service-card:hover {
+  background: rgba(192,90,58,0.06);
+  border-color: rgba(192,90,58,0.3);
+}
+.sc-label {
+  font-family: var(--mono); font-size: 0.6rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--terra); margin-bottom: 12px;
+}
+.sc-title {
+  font-family: var(--serif); font-weight: 600; font-size: 1.3rem;
+  color: var(--cream); margin-bottom: 12px; line-height: 1.2;
+}
+.sc-body {
+  font-size: 0.92rem; font-weight: 300; line-height: 1.72;
+  color: var(--stone); flex: 1;
+}
+.sc-sub-list {
+  margin-top: 12px; list-style: none; padding: 0;
+}
+.sc-sub-list li {
+  font-family: var(--mono); font-size: 0.62rem;
+  letter-spacing: 0.06em; color: var(--stone);
+  padding: 4px 0; display: flex; gap: 8px; align-items: flex-start;
+}
+.sc-sub-list li::before {
+  content: '—'; color: var(--terra); flex-shrink: 0;
+}
+.sc-footer {
+  margin-top: 20px; padding-top: 16px;
+  border-top: 1px solid rgba(245,240,232,0.06);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.sc-price {
+  font-family: var(--serif); font-size: 1.5rem;
+  font-weight: 700; color: var(--cream);
+  letter-spacing: -0.3px;
+}
+.sc-badge {
+  font-family: var(--mono); font-size: 0.56rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 2px;
+  background: rgba(192,90,58,0.15); color: var(--terra);
+}
+.services-cta {
+  margin-top: 56px; display: flex;
+  align-items: center; gap: 20px; flex-wrap: wrap;
+}
+.services-cta-note {
+  font-family: var(--mono); font-size: 0.72rem;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--sand);
+}
+
+/* ── UNFABRICATED ────────────────────── */
+#unfabricated { background: var(--sage-lt); }
+.unfab-inner {
+  display: grid; grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px; align-items: start;
+}
+.unfab-tag {
+  font-family: var(--mono); font-size: 0.6rem;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 7px 14px; border-radius: 2px;
+  background: rgba(45,91,78,0.12); color: var(--forest);
+  border: 1px solid rgba(45,91,78,0.2);
+  display: block; text-align: right; white-space: nowrap;
+  margin-bottom: 8px;
+}
+.unfab-sub {
+  font-size: 1.05rem; font-weight: 300; color: var(--grey-60);
+  line-height: 1.82; max-width: 540px; margin-bottom: 28px;
+}
+#unfabricated .sec-eyebrow { color: var(--forest); }
+#unfabricated .sec-rule { background: var(--forest); }
+#unfabricated .sec-title em { color: var(--forest); }
+
+/* ── CURRENTLY LEARNING ──────────────── */
+#learning { background: var(--cream); }
+.learning-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2px; margin-top: 0;
+}
+.learning-card {
+  background: var(--mist); padding: 32px 28px;
+  border-top: 3px solid transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+.learning-card:hover { border-color: var(--terra); background: var(--blush); }
+.lc-label {
+  font-family: var(--mono); font-size: 0.6rem;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--terra); margin-bottom: 12px;
+}
+.lc-title {
+  font-family: var(--serif); font-weight: 600;
+  font-size: 1.2rem; color: var(--charcoal);
+  margin-bottom: 10px; line-height: 1.3;
+}
+.lc-body {
+  font-size: 0.92rem; font-weight: 300;
+  color: var(--grey-60); line-height: 1.72;
+}
+
+/* ── CREDENTIALS ─────────────────────── */
+#credentials { background: var(--charcoal); }
+#credentials .sec-title { color: var(--cream); }
+#credentials .sec-title em { color: var(--terra); }
+#credentials .sec-sub { color: var(--stone); }
+#credentials .sec-eyebrow { color: var(--terra); }
+#credentials .sec-rule { background: var(--terra); }
+.creds-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+.cred-card {
+  background: rgba(245,240,232,0.03);
+  border: 1px solid rgba(245,240,232,0.06);
+  padding: 30px 28px;
+  transition: background 0.2s, border-color 0.2s;
+}
+.cred-card:hover {
+  background: rgba(192,90,58,0.05);
+  border-color: rgba(192,90,58,0.2);
+}
+.cred-type {
+  font-family: var(--mono); font-size: 0.58rem;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--stone); margin-bottom: 8px;
+}
+.cred-name {
+  font-family: var(--serif); font-weight: 600; font-size: 1.1rem;
+  color: var(--cream); margin-bottom: 8px; line-height: 1.3;
+}
+.cred-detail {
+  font-size: 0.88rem; font-weight: 300;
+  color: var(--stone); line-height: 1.65;
+}
+.cred-accent {
+  margin-top: 12px; display: inline-block;
+  font-family: var(--mono); font-size: 0.58rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--terra);
+}
+
+/* ── PRESS ───────────────────────────── */
+#press { background: var(--cream); }
+.press-card {
+  display: flex; flex-direction: column;
+  background: var(--mist); padding: 28px 26px;
+  text-decoration: none; color: inherit;
+  border-top: 3px solid transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+.press-card:hover { border-color: var(--terra); background: var(--blush); }
+.press-card-linkedin:hover { border-color: var(--forest); background: var(--sage-lt); }
+.press-pub {
+  font-family: var(--mono); font-size: 0.6rem;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--terra); margin-bottom: 10px;
+}
+.press-card-linkedin .press-pub { color: var(--forest); }
+.press-title {
+  font-family: var(--serif); font-weight: 600; font-size: 1.05rem;
+  color: var(--charcoal); margin-bottom: 10px; line-height: 1.3;
+}
+.press-desc {
+  font-size: 0.88rem; font-weight: 300;
+  color: var(--grey-60); line-height: 1.68; flex: 1;
+}
+.press-link {
+  margin-top: 16px; font-family: var(--mono); font-size: 0.6rem;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--terra);
+}
+.press-card-linkedin .press-link { color: var(--forest); }
+@media (max-width: 1024px) {
+  #press .sec-wrap > div { grid-template-columns: repeat(2,1fr) !important; }
+}
+@media (max-width: 640px) {
+  #press .sec-wrap > div { grid-template-columns: 1fr !important; }
+}
+
+/* ── TESTIMONIALS ────────────────────── */
+#testimonials { background: var(--blush); border-top: 3px solid var(--forest); }
+.testimonials-inner {
+  max-width: 1120px; margin: 0 auto; padding: 88px var(--pad);
+}
+.testimonials-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 2px; margin-top: 52px;
+}
+.testi-card {
+  background: var(--cream); padding: 36px 32px;
+  border-left: 3px solid var(--forest);
+}
+.testi-quote {
+  font-family: var(--serif); font-size: 1.15rem;
+  font-style: italic; font-weight: 400;
+  color: var(--charcoal); line-height: 1.7;
+  margin-bottom: 20px;
+}
+.testi-quote::before {
+  content: '\201C'; color: var(--forest);
+  font-size: 1.6em; line-height: 0;
+  vertical-align: -0.35em; margin-right: 3px;
+}
+.testi-attr {
+  font-family: var(--mono); font-size: 0.6rem;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--stone);
+}
+#testimonials .sec-eyebrow { color: var(--forest); }
+#testimonials .sec-rule { background: var(--forest); }
+
+/* ── CONNECT / CONTACT ───────────────── */
+#contact { background: var(--charcoal); position: relative; overflow: hidden; }
+#contact::after {
+  content: '';
+  position: absolute; right: 0; top: 0; bottom: 0;
+  width: 8px; background: var(--terra); opacity: 0.85;
+}
+.contact-inner {
+  max-width: 1120px; margin: 0 auto;
+  padding: 96px var(--pad);
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 88px; align-items: center;
+  position: relative; z-index: 1;
+}
+.contact-title {
+  font-family: var(--serif); font-weight: 700;
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  line-height: 1.06; letter-spacing: -0.5px;
+  color: var(--cream); margin-bottom: 18px;
+}
+.contact-title em { font-style: italic; font-weight: 300; color: var(--sand); }
+.contact-sub {
+  font-size: 1.02rem; font-weight: 300; line-height: 1.82;
+  color: var(--stone); margin-bottom: 28px;
+}
+.contact-email-display {
+  font-family: var(--serif); font-size: 1.5rem; font-weight: 600;
+  color: var(--terra); text-decoration: none;
+  display: block; margin-bottom: 28px;
+  transition: color 0.2s;
+}
+.contact-email-display:hover { color: var(--sand); }
+.social-row {
+  display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px;
+}
+.social-link {
+  font-family: var(--mono); font-size: 0.62rem;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 9px 18px; border-radius: 2px;
+  background: rgba(245,240,232,0.05);
+  border: 1px solid rgba(245,240,232,0.1);
+  color: var(--sand); text-decoration: none;
+  display: flex; align-items: center; gap: 7px;
+  transition: background 0.2s, border-color 0.2s;
+}
+.social-link:hover {
+  background: rgba(192,90,58,0.12);
+  border-color: rgba(192,90,58,0.3);
+  color: var(--terra);
+}
+.contact-right { padding-top: 8px; }
+.booking-card {
+  background: var(--cream); border-radius: 4px; padding: 36px 32px;
+  border-top: 3px solid var(--terra);
+}
+.booking-card-label {
+  font-family: var(--mono); font-size: 0.62rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--terra); margin-bottom: 12px; display: block;
+}
+.booking-card-title {
+  font-family: var(--serif); font-weight: 700;
+  font-size: 1.8rem; color: var(--charcoal);
+  margin-bottom: 6px; line-height: 1.1;
+}
+.booking-card-sub {
+  font-size: 0.92rem; font-weight: 300;
+  color: var(--grey-60); line-height: 1.65; margin-bottom: 22px;
+}
+.booking-duration {
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--mono); font-size: 0.6rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--stone); margin-bottom: 22px;
+}
+.duration-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--forest); flex-shrink: 0;
+}
+#contact .sec-eyebrow { color: var(--terra); }
+
+/* ── FOOTER ──────────────────────────── */
+footer {
+  background: var(--charcoal);
+  border-top: 1px solid rgba(245,240,232,0.06);
+  padding: 22px var(--pad);
+  display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 12px;
+}
+footer span {
+  font-family: var(--mono); font-size: 0.58rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: #3a3633;
+}
+footer a { color: #3a3633; text-decoration: none; transition: color 0.2s; }
+footer a:hover { color: var(--stone); }
+
+/* ── IMAGES ──────────────────────────── */
+.hero-photo {
+  width: 100%; border-radius: 3px; display: block;
+  aspect-ratio: 1; object-fit: cover; object-position: top center;
+  margin-bottom: 20px;
+}
+.about-skydive {
+  width: 100%; height: auto; display: block;
+  border-radius: 3px; margin-top: 2px;
+  opacity: 0.92;
+}
+.unfab-image-duo {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-bottom: 12px;
+}
+.unfab-image-duo img {
+  width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 3px; display: block;
+}
+.press-thumb {
+  width: calc(100% + 52px);
+  margin: -28px -26px 16px -26px;
+  aspect-ratio: 16/9; object-fit: cover; display: block;
+}
+.press-no-thumb {
+  width: calc(100% + 52px); margin: -28px -26px 16px -26px;
+  height: 72px; display: flex; align-items: center; justify-content: center;
+  background: var(--charcoal);
+}
+.press-no-thumb.green { background: var(--forest); }
+.press-no-thumb span { font-size: 1.6rem; }
+.speaking-visual {
+  width: 100%; height: auto; border-radius: 3px; display: block;
+  max-height: 520px; object-fit: contain; background: rgba(245,240,232,0.03);
+}
+.contact-portrait {
+  width: 100%; aspect-ratio: 16/7;
+  object-fit: cover; object-position: top center;
+  border-radius: 3px; margin-bottom: 24px; display: block;
+}
+.testi-avatar-wrap { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.testi-initials {
+  width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
+  background: var(--sage-lt); border: 2px solid var(--forest);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-size: 0.9rem; font-weight: 600; color: var(--forest);
+}
+
+/* ── RESPONSIVE ──────────────────────── */
+@media (max-width: 1024px) {
+  :root { --pad: 40px; }
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-card { display: none; }
+  #home::after { display: none; }
+  .about-grid { grid-template-columns: 1fr; gap: 44px; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .creds-grid { grid-template-columns: repeat(2, 1fr); }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+  .impact-grid { grid-template-columns: repeat(3, 1fr); }
+  .unfab-inner { grid-template-columns: 1fr; gap: 28px; }
+  .learning-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  :root { --pad: 22px; }
+  body { font-size: 16px; }
+  .services-grid, .creds-grid, .impact-grid, .learning-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="ring"></div>
+
+<!-- ── NAV ────────────────────────────────────────── -->
+<nav>
+  <a href="#" class="nav-logo">Prabaarja <em>Bedi</em></a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#unfabricated">UNfabricated</a>
+    <a href="#press">Press</a>
+    <a href="#contact">Connect</a>
+  </div>
+  <a href="#contact" class="nav-cta">Book a free call</a>
+</nav>
+
+
+<!-- ── HERO ───────────────────────────────────────── -->
+<section id="home">
+  <div class="hero-inner">
+    <div>
+      <p class="hero-eyebrow">Toronto, ON &nbsp;·&nbsp; Babson MBA &nbsp;·&nbsp; Big4 Alumni &nbsp;·&nbsp; Entrepreneur &amp; Advisor</p>
+      <h1>
+        Entrepreneur.<br>
+        <em>Marketer.</em><br>
+        Startup Advisor.
+      </h1>
+      <p class="hero-sub" style="font-size:1.0rem;font-weight:500;color:var(--charcoal);margin-bottom:10px;margin-top:20px;">
+        10+ years across entrepreneurship, institutional marketing, startup coaching, and Big4 consulting.
+      </p>
+      <p class="hero-sub" style="margin-top:0;">
+        I help founders, startups, and family businesses grow with clarity — through honest coaching,
+        strategy built on real experience and not templates, and through organic marketing and branding.
+      </p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-terra">Book a free 20-min call</a>
+        <a href="#services" class="btn-outline">See my services</a>
+      </div>
+      <div class="free-call-badge">
+        <div class="badge-dot"></div>
+        No Pitch. No Pressure. Just an honest conversation.
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <img src="images/headshot.jpg" alt="Prabaarja Bedi" class="hero-photo">
+      <div class="hc-name" style="font-size:0.8rem;line-height:1.6;letter-spacing:0.01em;">Babson MBA &nbsp;|&nbsp; Entrepreneur &nbsp;|&nbsp; Coach &amp; Advisor &nbsp;|&nbsp; Big4 Consultant &nbsp;|&nbsp; Motivational Speaker</div>
+      <div class="hc-title" style="display:flex;align-items:center;gap:6px;margin-bottom:18px;">
+        <span style="color:var(--terra);">📍</span> Canada &amp; India
+      </div>
+      <div class="hc-divider"></div>
+      <div class="hc-item"><div class="hc-dot"></div><span>MBA, Babson College — #1 globally for entrepreneurship</span></div>
+      <div class="hc-item"><div class="hc-dot"></div><span>Poets &amp; Quants Best &amp; Brightest MBA</span></div>
+      <div class="hc-item"><div class="hc-dot"></div><span>Founded companies in wellness, fashion &amp; promotional products</span></div>
+      <div class="hc-item"><div class="hc-dot"></div><span>Launched D2C and D2B companies</span></div>
+      <div class="hc-item"><div class="hc-dot"></div><span>Data-driven and intuitive marketer</span></div>
+      <div class="hc-item"><div class="hc-dot"></div><span>Risk consulting — healthcare, manufacturing, textile &amp; financial services</span></div>
+      <div class="hc-item"><div class="hc-dot"></div><span>Currently: Founder &amp; CIO, UNfabricated — ethical merch, led &amp; made by women</span></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── IMPACT NUMBERS ─────────────────────────────── -->
+<section id="impact">
+  <div class="impact-wrap">
+    <div class="impact-grid">
+      <div class="impact-cell reveal">
+        <span class="impact-num">10<em>+</em></span>
+        <span class="impact-lbl">Years of experience</span>
+      </div>
+      <div class="impact-cell reveal">
+        <span class="impact-num">10<em>+</em></span>
+        <span class="impact-lbl">Industries served</span>
+      </div>
+      <div class="impact-cell reveal">
+        <span class="impact-num">3</span>
+        <span class="impact-lbl">Countries worked in globally</span>
+      </div>
+      <div class="impact-cell reveal">
+        <span class="impact-num">300<em>+</em></span>
+        <span class="impact-lbl">Women empowered</span>
+      </div>
+      <div class="impact-cell reveal">
+        <span class="impact-num">$<em>100K</em>+</span>
+        <span class="impact-lbl">Marketing budgets managed</span>
+      </div>
+      <div class="impact-cell reveal">
+        <span class="impact-num">20<em>+</em></span>
+        <span class="impact-lbl">Community engagements</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── ABOUT ──────────────────────────────────────── -->
+<section id="about">
+  <div class="sec-wrap">
+    <div class="about-grid">
+      <div>
+        <span class="sec-eyebrow">About Aarja</span>
+        <span class="sec-rule"></span>
+        <h2 class="sec-title forest-em">
+          Built from<br>resilience.<br>
+          Driven by <em>impact</em>.
+        </h2>
+        <p class="about-body">
+          I've been learning and building since 2014. My career spans risk consulting at a Big4 firm —
+          working with clients in healthcare, manufacturing, and financial services — a first
+          venture in wellness living products, a two-year MBA at Babson College in Boston,
+          and the founding of UNfabricated mid-pandemic with no job and no work visa.
+        </p>
+        <p class="about-body">
+          I grew up in India watching the men of my family build and scale a business.
+          That observation pushed me to work against the odds and build something of my own.
+        </p>
+        <p class="about-body">
+          A COVID-19 lockdown stranded me in Canada when I had to launch my D2C company through
+          a trunk show. That did not stop me from launching the brand and creating a meaningful
+          impact by stitching and donating 800 masks across India.
+        </p>
+        <p class="about-body">
+          I've since worked across institutional marketing in the US and Canada, grown UNfabricated,
+          coached founders, emceed community events, and advised family businesses —
+          all simultaneously, all with honesty as the baseline.
+        </p>
+        <div class="about-pull">
+          <p>Mission-driven. Organic-first. Honest above everything. I'm not the loudest voice
+          in the room — I'm the most consistent one for a specific person who needs real answers,
+          not frameworks.</p>
+        </div>
+        <div class="fun-fact">
+          <div class="fun-fact-icon">🪂</div>
+          <p>
+            <strong>A fun fact about me</strong>
+            I jumped out of a plane at 14,000 feet to conquer my fear of heights.
+            If I can do that, I can help you do the thing you've been putting off.
+          </p>
+        </div>
+      </div>
+
+      <div class="about-cards" style="position:relative;">
+        <div class="about-card reveal">
+          <h3>Institutional + Founder, Simultaneously</h3>
+          <p>Marketing, Events &amp; Sponsorships at TMU. Marketing &amp; Events at Brampton Venture Zone.
+          Running UNfabricated. Advising founders. All at once — offering a dual-track perspective
+          to budding entrepreneurs.</p>
+        </div>
+        <div class="about-card reveal">
+          <h3>Deep India Textile &amp; Supply Chain Knowledge</h3>
+          <p>A generationally passed-down network in India — manufacturing background, active sourcing
+          relationships with women-owned production houses, and sourcing across Asia. One of the very
+          few people in the GTA with all three at once.</p>
+        </div>
+        <div class="about-card reveal">
+          <h3>South Asian Family Business Insight</h3>
+          <p>I consulted for my family's textile SME and lived the female next-gen experience in a
+          patriarchal family business. I wrote a root cause analysis of its real problems.
+          Let's talk about your family business!</p>
+        </div>
+        <div class="about-card reveal">
+          <h3>Organic-First Marketing Philosophy</h3>
+          <p>Knowing when NOT to run ads is the most underrated insight for a cash-constrained
+          founder. My genuine preference and practice is organic-first — applied across
+          10+ industries, from healthcare and financial services to fashion sustainability.</p>
+        </div>
+        <div class="about-card reveal">
+          <h3>Community Builder &amp; Emcee</h3>
+          <p>Emceed the "Woven Voices" event. Expert entrepreneur advisor at ICUBE by the University
+          of Toronto Mississauga. Pitch Coach workshops for early-stage founders. Panellist and
+          speaker across social enterprise summits, Say Hi to the Future, Northeastern University,
+          and more.</p>
+        </div>
+        <img src="images/skydive.jpg" alt="Aarja skydiving at 14,000 feet" class="about-skydive">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<hr class="divider">
+
+
+<!-- ── SERVICES ───────────────────────────────────── -->
+<section id="services">
+  <div class="sec-wrap">
+    <span class="sec-eyebrow">Services</span>
+    <span class="sec-rule"></span>
+    <h2 class="sec-title">Skills proven<br>in <em>practice</em>.</h2>
+    <p class="sec-sub">
+      10+ years. Big4 consulting. Two businesses built. Institutional marketing at scale.
+      I work with early-stage founders, immigrant entrepreneurs, and family business owners —
+      the people most marketing advice was never written for.
+    </p>
+    <p style="font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--terra);margin-top:14px;margin-bottom:0;padding:10px 0;border-top:1px solid rgba(245,240,232,0.1);border-bottom:1px solid rgba(245,240,232,0.1);">AI isn't a separate offering — it's how I work.</p>
+
+    <div class="services-grid">
+
+      <div class="service-card reveal">
+        <div class="sc-label">01 — Startup Consulting</div>
+        <div class="sc-title">Startup Consulting — Strategy, Growth &amp; AI-Powered Systems</div>
+        <div class="sc-body">
+          End-to-end startup advisory — from business model clarity to go-to-market strategy.
+          Includes AI tools for lead generation and sales automation, so you're building
+          a smarter pipeline from day one.
+        </div>
+        <div class="sc-footer">
+          <span class="sc-price">$150–$300<span style="font-size:0.9rem;font-weight:300">/hr</span></span>
+          <span class="sc-badge">Scoped or hourly</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="sc-label">02 — Pitch Coaching</div>
+        <div class="sc-title">Pitch Coaching</div>
+        <div class="sc-body">
+          Won pitch competitions. Raised $20,000 through pitches. Judged pitch competitions.
+          Coached 20+ early-stage entrepreneurs. Written testimonials from coached founders.
+          3-session package covering story, structure, and delivery — built especially for
+          pre-accelerator founders and immigrant entrepreneurs.
+        </div>
+        <div class="sc-footer">
+          <span class="sc-price">$600–$1,000</span>
+          <span class="sc-badge">3 sessions</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="sc-label">03 — Speaking &amp; Emcee</div>
+        <div class="sc-title">Speaking &amp; Emcee</div>
+        <div class="sc-body">
+          Available for keynotes, panels, workshops, and emcee engagements.
+          Signature topics: holistic women's empowerment, organic marketing for founders who
+          can't afford ads, the female next-gen family business experience, building under
+          constraint with resilience, and textile/fashion supply chain.
+        </div>
+        <div class="sc-footer">
+          <span class="sc-price">Enquire</span>
+          <span class="sc-badge">Events &amp; panels</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="sc-label">04 — Family Business Coaching</div>
+        <div class="sc-title">Family Business Coaching for Next Gen</div>
+        <div class="sc-body">
+          For South Asian next-gen professionals navigating the family business decision —
+          especially women. I've lived it. I've diagnosed it. I can help you think through
+          succession, growth, and marketing without losing what makes the business meaningful.
+        </div>
+        <div class="sc-footer">
+          <span class="sc-price">$150–$250<span style="font-size:0.9rem;font-weight:300">/hr</span></span>
+          <span class="sc-badge">Coaching sessions</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="sc-label">05 — Marketing Consulting</div>
+        <div class="sc-title">Marketing Consulting</div>
+        <div style="display:flex;flex-direction:column;gap:0;margin-top:14px;">
+          <div style="border-top:1px solid rgba(245,240,232,0.12);padding:14px 0;">
+            <div style="font-family:var(--mono);font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--terra);margin-bottom:5px;">Audit</div>
+            <div style="font-family:var(--serif);font-size:1.25rem;font-weight:600;color:var(--cream);line-height:1.2;margin-bottom:4px;">$750–$1,200</div>
+            <div style="font-family:var(--mono);font-size:0.6rem;color:var(--stone);margin-bottom:8px;">1–2 weeks</div>
+            <div style="font-size:0.85rem;color:var(--stone);line-height:1.65;">Positioning + channel audit + priority recommendations. Covers whether your current stack has AI gaps.</div>
+          </div>
+          <div style="border-top:1px solid rgba(245,240,232,0.12);padding:14px 0 0 0;">
+            <div style="font-family:var(--mono);font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--terra);margin-bottom:5px;">Strategy Project</div>
+            <div style="font-family:var(--serif);font-size:1.25rem;font-weight:600;color:var(--cream);line-height:1.2;margin-bottom:4px;">$2,000–$4,000</div>
+            <div style="font-family:var(--mono);font-size:0.6rem;color:var(--stone);margin-bottom:8px;">4–6 weeks · Full strategy build</div>
+            <div style="font-size:0.85rem;color:var(--stone);line-height:1.65;">SEO + GEO (generative engine optimisation), messaging, and email infrastructure. Email includes AI-assisted sequencing.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="sc-label">06 — Copywriting</div>
+        <div class="sc-title">Copywriting</div>
+        <div class="sc-body">
+          For founders who are great at their craft but can't write about what they do.
+          Website copy, pitch decks, founder bios, and email sequences — written with your voice.
+        </div>
+        <div class="sc-footer">
+          <span class="sc-price">$300–$800</span>
+          <span class="sc-badge">Per project</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="sc-label">07 — Events &amp; Sponsorships</div>
+        <div class="sc-title">Events &amp; Sponsorships</div>
+        <div class="sc-body">
+          Institutional event experience at TMU (1,200+ attendees, 30+ speakers, 20+ sponsors).
+          Sponsorship strategy + deck build + outreach support. Scoped per event.
+        </div>
+        <div class="sc-footer">
+          <span class="sc-price">$1,200–$2,500</span>
+          <span class="sc-badge">Scoped per event</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="sc-label">08 — Textile Sourcing</div>
+        <div class="sc-title">India Textile Sourcing</div>
+        <div class="sc-body">
+          High-quality fashion garments and merchandise directly from India — through active
+          relationships with women-owned production houses, backed by 30 years of family
+          textile knowledge. Ethical, sustainable, and traceable. No agents, no middlemen —
+          direct access to the Indian supply chain.
+        </div>
+        <div class="sc-footer">
+          <span class="sc-price">$500–$2,000</span>
+          <span class="sc-badge">Or 5–10% of order</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="sc-label">09 — Fashion Styling</div>
+        <div class="sc-title">Fashion Styling</div>
+        <div class="sc-body">
+          A genuine interest adjacent to my brand work. Personal styling consultations
+          for women finding their own style — including founders and professionals.
+          Grounded in versatility and quality: buy less, wear more.
+        </div>
+        <div class="sc-footer">
+          <span class="sc-price">Enquire</span>
+          <span class="sc-badge">Consultations</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="services-cta">
+      <a href="#contact" class="btn-terra">Book a free 20-min intro call</a>
+      <span class="services-cta-note" style="text-transform:uppercase;letter-spacing:0.08em;">No commitment. I'll tell you whether I can help — and if not, who can.</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── UNFABRICATED ────────────────────────────────── -->
+<section id="unfabricated">
+  <div class="sec-wrap">
+    <div class="unfab-inner">
+      <div>
+        <span class="sec-eyebrow">Currently Building</span>
+        <span class="sec-rule" style="background:var(--forest)"></span>
+        <h2 class="sec-title forest-em">UNfabricated —<br><em>led and made by women</em>.</h2>
+        <p class="unfab-sub">
+          Promo merchandise for corporates, startups, and events — ethically produced by women.
+          Reach out for your merch enquiries: corporate gifting, startup launch merch,
+          NFC-enabled products, and event swag with a story behind it.
+        </p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+          <a href="https://theunfabricated.com" target="_blank" rel="noopener" class="btn-charcoal">
+            Visit our Website →
+          </a>
+          <a href="mailto:prabaarja@theunfabricated.com?subject=Merch enquiry" class="btn-outline">Email me for merch →</a>
+        </div>
+      </div>
+      <div>
+        <div class="unfab-image-duo">
+          <img src="images/unfab-artisans.jpg" alt="UNfabricated women artisans">
+          <img src="images/unfab-product.png" alt="UNfabricated products">
+        </div>
+        <span class="unfab-tag">Custom Merch</span>
+        <span class="unfab-tag">Merch Designing Services</span>
+        <span class="unfab-tag">One-Stop Solution</span>
+        <span class="unfab-tag">NFC-Enabled Merch</span>
+        <span class="unfab-tag">Transparency</span>
+        <div style="margin-top:14px;display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(45,91,78,0.15);">
+            <span style="font-family:var(--mono);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone);">100% women-owned &amp; led</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(45,91,78,0.15);">
+            <span style="font-family:var(--mono);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone);">15+ partner organizations</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(45,91,78,0.15);">
+            <span style="font-family:var(--mono);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone);">5 production partners</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(45,91,78,0.15);">
+            <span style="font-family:var(--mono);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone);">100+ women empowered</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;">
+            <span style="font-family:var(--mono);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone);">5,000m fabric repurposed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<hr class="divider">
+
+
+<!-- ── CURRENTLY LEARNING ─────────────────────────── -->
+<section id="learning">
+  <div class="sec-wrap">
+    <span class="sec-eyebrow">Currently Learning</span>
+    <span class="sec-rule"></span>
+    <h2 class="sec-title">Always building.<br>Always <em>upskilling</em>.</h2>
+    <p class="sec-sub">
+      I'm actively learning and applying these in real time — which means I'm one step
+      ahead of where most founders are, and I'll bring what I'm learning directly into
+      our work together.
+    </p>
+
+    <div class="learning-grid">
+      <div class="learning-card reveal">
+        <div class="lc-label">Data + AI in Fashion</div>
+        <div class="lc-title">The Power of Data &amp; AI in the Fashion Industry</div>
+        <div class="lc-body">
+          How AI and data are reshaping fashion — from trend forecasting platforms to how
+          sustainable brands can use intelligence without losing their mission.
+        </div>
+      </div>
+      <div class="learning-card reveal">
+        <div class="lc-label">Agentic AI</div>
+        <div class="lc-title">Agentic AI for Trend Forecasting</div>
+        <div class="lc-body">
+          Platforms that scan social signals and define trends 12–18 months out —
+          making big-fashion intelligence accessible to small independent brands.
+        </div>
+      </div>
+      <div class="learning-card reveal">
+        <div class="lc-label">AI Sales</div>
+        <div class="lc-title">Making AI My Sales Rep</div>
+        <div class="lc-body">
+          Testing AI-powered lead generation and outreach automation.
+          When it works for UNfabricated, it becomes a service offering.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ── PRESS & FEATURES ──────────────────────────────── -->
+<section id="press">
+  <div class="sec-wrap">
+    <span class="sec-eyebrow">Press &amp; Features</span>
+    <span class="sec-rule"></span>
+    <h2 class="sec-title">Featured in &amp;<br><em>written about</em>.</h2>
+    <p class="sec-sub">A selection of articles, profiles, and features from publications and platforms that have covered my work.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;">
+
+      <!-- ROW 1 -->
+      <a href="https://poetsandquants.com/2020/05/02/2020-best-brightest-mbas-prabaarja-bedi-babson-college-olin/" target="_blank" rel="noopener" class="press-card">
+        <img class="press-thumb" src="https://poetsandquants.com/wp-content/uploads/sites/5/2020/04/PoetsandQuants-MBA-2020-BandB-Michael-Chmura-Babson-1024x640.jpg" alt="Poets &amp; Quants 2020 Best &amp; Brightest MBAs" loading="lazy">
+        <div class="press-pub">Poets &amp; Quants</div>
+        <div class="press-title">2020 Best &amp; Brightest MBAs: Prabaarja Bedi, Babson College</div>
+        <div class="press-desc">Selected from 60+ business schools worldwide for community impact and entrepreneurial vision.</div>
+        <div class="press-link">Read article →</div>
+      </a>
+
+      <a href="https://www.bramptonguardian.com/news/meet-the-women-who-are-ecoconscious-entrepreneurs-at-sheridan-college-in-brampton/article_e0c05fb7-9b8c-5635-a908-91a967a29a1d.html" target="_blank" rel="noopener" class="press-card">
+        <img class="press-thumb" src="images/brampton-guardian.jpg" alt="Brampton Guardian feature" loading="lazy">
+        <div class="press-pub">Brampton Guardian</div>
+        <div class="press-title">Meet the Women Who Are Eco-Conscious Entrepreneurs at Sheridan College</div>
+        <div class="press-desc">Feature on Aarja as an eco-conscious entrepreneur through Sheridan College's program in Brampton.</div>
+        <div class="press-link">Read article →</div>
+      </a>
+
+      <a href="https://us.amazon.com/Eves-against-Odds-Inspiring-Entrepreneurs/dp/1639975594" target="_blank" rel="noopener" class="press-card">
+        <img class="press-thumb" src="images/book.jpg" alt="Eves Against the Odds Vol. 2" loading="lazy">
+        <div class="press-pub">Eves Against the Odds — Vol. 2</div>
+        <div class="press-title">One of 25 Inspiring Women Entrepreneurs</div>
+        <div class="press-desc">Featured in the anthology of women entrepreneurs — toured Mumbai, Pune, Ahmedabad, and Noida.</div>
+        <div class="press-link">View book →</div>
+      </a>
+
+      <!-- ROW 2 -->
+      <a href="https://entrepreneurship.babson.edu/prabaarja-bedi-unfabricated/" target="_blank" rel="noopener" class="press-card">
+        <img class="press-thumb" src="https://entrepreneurship.babson.edu/wp-content/uploads/2020/05/Mag_1200x630_0004_Prabaarja-Bedi.jpg" alt="Babson Magazine feature on Prabaarja Bedi" loading="lazy">
+        <div class="press-pub">Babson Magazine</div>
+        <div class="press-title">'They Care About This'</div>
+        <div class="press-desc">Profiles UNfabricated's mission to employ rural women in India through circular economy thinking.</div>
+        <div class="press-link">Read article →</div>
+      </a>
+
+      <a href="https://icubeutm.ca/startup-highlight-unfabricated/" target="_blank" rel="noopener" class="press-card">
+        <img class="press-thumb" src="https://icubeutm.ca/wp-content/uploads/2024/08/UNfabricated-Startup-Highlight-Blog-Graphic-1536x768.png" alt="ICUBE UTM Startup Highlight" loading="lazy">
+        <div class="press-pub">ICUBE UTM</div>
+        <div class="press-title">Startup Highlight: UNfabricated</div>
+        <div class="press-desc">UTM's innovation hub profiles the COVID-19 pivot and the women artisans behind UNfabricated.</div>
+        <div class="press-link">Read article →</div>
+      </a>
+
+      <a href="https://www.collabs.io/mag/unfabricated/" target="_blank" rel="noopener" class="press-card">
+        <img class="press-thumb" src="https://storage.ghost.io/c/fe/59/fe5955ce-11a9-48c2-837e-6927d128a3ea/content/images/2021/12/2ef6c7f8-469b-464c-9568-26ae2eea3689-photo_of_your_product_or_your_service-UNfabricated-cover.jpeg" alt="Collabs.io UNfabricated feature" loading="lazy">
+        <div class="press-pub">Collabs.io</div>
+        <div class="press-title">Socially and Environmentally Sustainable — UNfabricated</div>
+        <div class="press-desc">Interview on UNfabricated's dual mission to reduce textile waste and empower women artisans.</div>
+        <div class="press-link">Read article →</div>
+      </a>
+
+      <!-- ROW 3 -->
+      <a href="https://www.canadiantamilcongress.ca/news/woven-voices-celebrating-tamil-heritage-and-womens-resilience/" target="_blank" rel="noopener" class="press-card">
+        <img class="press-thumb" src="https://www.canadiantamilcongress.ca/wp-content/uploads/2025/10/565629693_1261823819317707_4103618271435154631_n-1-800x450.jpg" alt="Woven Voices event" loading="lazy">
+        <div class="press-pub">Canadian Tamil Congress</div>
+        <div class="press-title">Woven Voices: Celebrating Tamil Heritage and Women's Resilience</div>
+        <div class="press-desc">Coverage of the "Woven Voices" event celebrating Tamil heritage and women's resilience, emceed by Aarja.</div>
+        <div class="press-link">Read more →</div>
+      </a>
+
+      <a href="https://www.youtube.com/watch?v=fgBvLeAQeIk" target="_blank" rel="noopener" class="press-card">
+        <img class="press-thumb" src="https://img.youtube.com/vi/fgBvLeAQeIk/maxresdefault.jpg" alt="Meet Prabaarja Bedi — Sheridan EDGE" loading="lazy">
+        <div class="press-pub">YouTube · Sheridan EDGE</div>
+        <div class="press-title">Meet Prabaarja Bedi — Social Impact Catalyst 2022</div>
+        <div class="press-desc">Video profile from the RBC Future Launch Social Impact Catalyst program at Sheridan EDGE.</div>
+        <div class="press-link">Watch video →</div>
+      </a>
+
+      <a href="https://www.youtube.com/watch?v=_akySp2t_EQ" target="_blank" rel="noopener" class="press-card">
+        <img class="press-thumb" src="https://img.youtube.com/vi/_akySp2t_EQ/maxresdefault.jpg" alt="Empowering Women &amp; Reducing Textile Waste" loading="lazy">
+        <div class="press-pub">YouTube · Say Hi to the Future</div>
+        <div class="press-title">Empowering Women &amp; Reducing Textile Waste — Ingenious Thinkers</div>
+        <div class="press-desc">Episode 104 featuring Aarja on empowering women and reducing textile waste through UNfabricated.</div>
+        <div class="press-link">Watch video →</div>
+      </a>
+
+
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ───────────────────────────────── -->
+<section id="testimonials">
+  <div class="testimonials-inner">
+    <span class="sec-eyebrow">What people say</span>
+    <span class="sec-rule" style="background:var(--forest)"></span>
+    <h2 class="sec-title forest-em">Honest feedback from<br><em>real conversations</em>.</h2>
+
+    <div class="testimonials-grid">
+      <div class="testi-card reveal">
+        <div class="testi-avatar-wrap">
+          <div class="testi-initials">NF</div>
+          <div style="font-family:var(--mono);font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone);">Coached Nonprofit Founder &nbsp;·&nbsp; Toronto, ON</div>
+        </div>
+        <div class="testi-quote">
+          She guided me through everything — financials, marketing, growth strategy.
+          I felt heard the entire time. Exactly the kind of advisor you want in your corner.
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-avatar-wrap">
+          <div class="testi-initials">EF</div>
+          <div style="font-family:var(--mono);font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone);">Early-Stage Founder &nbsp;·&nbsp; GTA</div>
+        </div>
+        <div class="testi-quote">
+          Aarja doesn't give you a framework. She gives you the honest answer — even when
+          it's not what you want to hear. That's rare, and that's exactly what I needed.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── CONTACT / CONNECT ──────────────────────────── -->
+<section id="contact">
+  <div class="contact-inner">
+    <div>
+      <img src="images/contact.jpg" alt="Prabaarja Bedi" class="contact-portrait">
+      <span class="sec-eyebrow">Let's Connect</span>
+      <h2 class="contact-title">
+        You don't need more<br>credentials.<br>
+        You need to <em>start</em>.
+      </h2>
+      <p class="contact-sub">
+        Whether it's a marketing audit, pitch coaching, family business advisory,
+        AI strategy, or an honest conversation about where to focus —
+        the first call is free, and I'll tell you straight whether I can help.
+      </p>
+      <a href="mailto:prabaarja@theunfabricated.com" class="contact-email-display">
+        prabaarja@theunfabricated.com
+      </a>
+
+      <div style="margin-bottom:10px;">
+        <span style="font-family:var(--mono);font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--stone);display:block;margin-bottom:10px;">Follow &amp; connect</span>
+        <div class="social-row">
+          <a href="https://www.linkedin.com/in/prabaarjabedi/" target="_blank" class="social-link">
+            <!-- LinkedIn icon -->
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://instagram.com/unfabricated" target="_blank" class="social-link">
+            <!-- Instagram icon -->
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            Instagram
+          </a>
+          <a href="https://theunfabricated.com" target="_blank" class="social-link">
+            <!-- Globe icon -->
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            UNfabricated
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-right">
+      <div class="booking-card">
+        <span class="booking-card-label">Free introductory call</span>
+        <div class="booking-card-title">Book a 20-minute call</div>
+        <div class="booking-card-sub">
+          No pitch. No pressure. Tell me what you're working on and I'll tell you
+          honestly whether — and how — I can help.
+        </div>
+        <div class="booking-duration">
+          <div class="duration-dot"></div>
+          20 minutes &nbsp;·&nbsp; No commitment &nbsp;·&nbsp; Completely free
+        </div>
+        <a href="mailto:prabaarja@theunfabricated.com?subject=Intro call request" class="btn-terra" style="width:100%;text-align:center;display:block;">
+          Request a call →
+        </a>
+        <div style="margin-top:14px;text-align:center;">
+          <span style="font-family:var(--mono);font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone);">
+            Or email prabaarja@theunfabricated.com
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── FOOTER ──────────────────────────────────────── -->
+<footer>
+  <span>&copy; 2026 Prabaarja Bedi &nbsp;·&nbsp; Toronto, ON</span>
+  <span>
+    <a href="https://theunfabricated.com">theunfabricated.com</a>
+    &nbsp;·&nbsp;
+    <a href="https://prabaarja.com">prabaarja.com</a>
+  </span>
+</footer>
+
+
+<script>
+/* ── Cursor ── */
+const cur = document.getElementById('cursor');
+const rng = document.getElementById('ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove', e => {
+  mx=e.clientX; my=e.clientY;
+  cur.style.transform = `translate(${mx-5}px,${my-5}px)`;
+});
+(function loop(){
+  rx+=(mx-rx)*0.1; ry+=(my-ry)*0.1;
+  rng.style.transform = `translate(${rx-17}px,${ry-17}px)`;
+  requestAnimationFrame(loop);
+})();
+document.querySelectorAll('a,button').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.classList.add('big');rng.classList.add('big');});
+  el.addEventListener('mouseleave',()=>{cur.classList.remove('big');rng.classList.remove('big');});
+});
+
+/* ── Scroll reveal ── */
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+
+</body>
+</html>
